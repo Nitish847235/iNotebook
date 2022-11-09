@@ -10,7 +10,7 @@ const Login = (props) => {
       const response = await fetch(`http://localhost:9000/api/auth/login`,{
         method : 'POST',
         headers: {
-            'Content_Type':'application/json',
+            'Content-Type':'application/json',
         },
         body: JSON.stringify({email: credentials.email, password: credentials.password})
     });

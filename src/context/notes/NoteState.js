@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
 import NoteContext from './NoteContext'
 
 const NoteState = (props)=>{
@@ -12,7 +12,7 @@ const NoteState = (props)=>{
         const response = await fetch(`${host}/api/notes/fetchallnotes`,{
             method : 'GET',
             headers: {
-                'Content_Type':'application/json',
+                'Content-Type':'application/json',
                 'authtoken':localStorage.getItem('token')
             },
         });
@@ -25,7 +25,7 @@ const NoteState = (props)=>{
         const response = await fetch(`${host}/api/notes/addnotes`,{
             method : 'POST',
             headers: {
-                'Content_Type':'application/json',
+                'Content-Type':'application/json',
                 'authtoken':localStorage.getItem('token')
             },
             body: JSON.stringify({title,description,tag})
@@ -39,7 +39,7 @@ const NoteState = (props)=>{
         const response = await fetch(`${host}/api/notes/deletenote/${id}`,{
             method : 'DELETE',
             headers: {
-                'Content_Type':'application/json',
+                'Content-Type':'application/json',
                 'authtoken':localStorage.getItem('token')
             }
         });
@@ -54,7 +54,7 @@ const NoteState = (props)=>{
         const response = await fetch(`${host}/api/notes/updatenote/${id}`,{
             method : 'PUT',
             headers: {
-                'Content_Type':'application/json',
+                'Content-Type':'application/json',
                 'authtoken':localStorage.getItem('token')
             },
             body: JSON.stringify({title,description,tag})
